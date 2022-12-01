@@ -3,10 +3,10 @@
     include './database.php';
     $weddingObj = new database();
     //Adding delete function
-    if (isset($_GET['deletedID']) && !empty($_GET['deletedID'])){
+    if (isset($_GET['deleteID']) && !empty($_GET['deleteID'])){
         echo 'delete works';
-        $deletedID = $_GET['deletedID'];
-        $weddingObj->deleteRecord($deletedID);
+        $deleteID = $_GET['deleteID'];
+        $weddingObj->deleteRecord($deleteID);
     }
 ?>
 <!doctype html>
@@ -27,7 +27,7 @@
         require './header.php';
         ?>
 
-        <main class="container">
+        <main>
             <!--     Adding php to get the action done message       -->
             <?php
                 if (isset($_GET['msg1']) == "insert"){

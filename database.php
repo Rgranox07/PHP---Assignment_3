@@ -57,6 +57,7 @@ class database{
         $result = $this->conn->query($query);
         if ($result->num_rows > 0){
             $row = $result->fetch_assoc();
+            return $row;
         }else{
             echo "No record found in database";
         }
@@ -80,7 +81,7 @@ class database{
             $query = "UPDATE wedding SET f_name = '$f_name', l_name = '$l_name', b_date = '$b_date', b_place = '$b_place', age = '$age', blood_group = '$blood_group', caste = '$caste', religion = '$religion', education = '$education', occupation = '$occupation', address = '$address', contact = '$contact' WHERE id = '$id'";
             $sql = $this->conn->query($query);
             if ($sql == true){
-                header("Location:index.php?msg2=update");
+                Header("Location:index.php?msg2=update");
             }else{
                 echo "Data didn't updated";
             }

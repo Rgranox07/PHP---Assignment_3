@@ -65,7 +65,7 @@
                         </div>
                         <div class="col-6">
                             <label for="c3" class="form-label text-white fw-bold">Blood Group</label>
-                            <input type="text" class="form-control" name="ublood_group" <?php echo $wedding['blood_group']; ?> id="c3" required>
+                            <input type="text" class="form-control" name="ublood_group" value="<?php echo $wedding['blood_group']; ?>" id="c3" required>
                         </div>
                     </div>
 
