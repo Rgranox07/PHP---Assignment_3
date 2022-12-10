@@ -28,6 +28,61 @@
         <div class="formbackground d-flex justify-content-center">
             <div class="form-size opacity-75 bg-dark">
 <!--       Main form         -->
+
+                <?php
+                if ($_SERVER["REQUEST_METHOD"] == "POST"){
+                    $f_name = trim($_POST['f_name']);
+                    $l_name = trim($_POST['l_name']);
+                    $b_date = trim($_POST['b_date']);
+                    $b_place = trim($_POST['b_place']);
+                    $age = trim($_POST['age']);
+                    $blood_group = trim($_POST['blood_group']);
+                    $caste = trim($_POST['caste']);
+                    $religion = trim($_POST['religion']);
+                    $education = trim($_POST['education']);
+                    $occupation = trim($_POST['occupation']);
+                    $address = trim($_POST['address']);
+                    $contact = trim($_POST['contact']);
+
+                    $error = "";
+                    if (empty($f_name)) {
+                        $error = "First NAme required";
+                    } elseif (empty($l_name)) {
+                        $error = "Last Name required";
+                    } elseif (empty($b_date)) {
+                        $error = "Birthdate is required";
+                    } elseif (empty($b_place)) {
+                        $error = "Birth place is required";
+                    } elseif (empty($age)) {
+                        $error = "Age is required";
+                    } elseif (empty($blood_group)) {
+                        $error = "Blood group is required";
+                    } elseif (empty($caste)) {
+                        $error = "Caste is required";
+                    } elseif (empty($religion)) {
+                        $error = "Religion is required";
+                    } elseif (empty($education)) {
+                        $error = "Education is required";
+                    } elseif (empty($occupation)) {
+                        $error = "Occupation is required";
+                    } elseif (empty($address)) {
+                        $error = "Address is required";
+                    } elseif (empty($contact)) {
+                        $error = "Contact Number is required";
+                    } else {
+                        ?>
+                        <!--  Show script for the submission  -->
+                        <script>
+                            alert('You are successfully registered');
+                        </script>
+
+                <?php
+
+                    }
+                }
+
+                ?>
+
                 <form action="index.php" method="post" class="form-containers">
                     <div class="row mb-3">
                         <div class="col-12">
@@ -108,6 +163,10 @@
                             <input type="submit" name="submit" value="UPLOAD" class="btn bg-light col-4 text-dark fw-bold">
                         </div>
                     </div>
+
+                    <?php
+                    echo "$error";
+                    ?>
 
 
                 </form>
